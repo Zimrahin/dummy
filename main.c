@@ -26,8 +26,8 @@
 #define AS5048B_ANGLE_1         (0xFF)
 
 // Define SCL and SDA gpio pins
-static const gpio_t SCL = { .port = 0, .pin = 26 };  // P0.09
-static const gpio_t SDA = { .port = 0, .pin = 27 }; // P0.10
+static const gpio_t SCL = { .port = 0, .pin = 10 }; 
+static const gpio_t SDA = { .port = 0, .pin = 9  };
 
 // Define Pi
 #ifndef M_PI
@@ -53,8 +53,9 @@ double convertToDegrees(uint16_t angle) {
 /**
  *  @brief The program starts executing here.
  */
+
 int main(void) {
-    // NRF_UICR->NFCPINS = UICR_NFCPINS_PROTECT_Disabled << UICR_NFCPINS_PROTECT_Pos;
+
     db_timer_hf_init();
     db_i2c_init(&SCL, &SDA);
 
